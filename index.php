@@ -21,14 +21,14 @@
     <body>
         <header>
            <div class="Brand">
-                <a href = "index.html"> <img src="style/FullLogo1.png" alt="Opentra Logo" style="width: 15%;"> </a>
+                <a href = "index.php"> <img src="style/FullLogo1.png" alt="Opentra Logo" style="width: 15%;"> </a>
                 <p> Opening minds develops the World </p> <!-- Slogan -->
             </div>  
             <nav>
-                 <a href = "index.html"> Home </a>
-                 <a href = "Jobs.html"> Jobs </a>
-                 <a href = "Apply.html"> Apply </a>
-                 <a href = "About.html"> About </a>
+                 <a href = "index.php"> Home </a>
+                 <a href = "Jobs.php"> Jobs </a>
+                 <a href = "Apply.php"> Apply </a>
+                 <a href = "About.php"> About </a>
             </nav>
             <hr>
         </header>
@@ -191,8 +191,8 @@
             <section class="Employment-announcements">
                 <h2>Want to join our Team?</h2>
                 <p>Opentra is hiring! Check out our current 
-                    <a href="Jobs.html">job openings</a> and 
-                    <a href="Apply.html">apply</a> to be part of 
+                    <a href="Jobs.php">job openings</a> and 
+                    <a href="Apply.php">apply</a> to be part of 
                     the team shaping the future.</p>
             </section>
 
@@ -218,10 +218,10 @@
         
         <footer>
              <nav class="footer-nav">
-                <a href = "index.html"> Home </a>
-                <a href = "Jobs.html"> Jobs </a>
-                <a href = "Apply.html"> Apply </a>
-                <a href = "About.html"> About </a>
+                <a href = "index.php"> Home </a>
+                <a href = "Jobs.php"> Jobs </a>
+                <a href = "Apply.php"> Apply </a>
+                <a href = "About.php"> About </a>
             </nav>
 
             <div class="footer-links">
