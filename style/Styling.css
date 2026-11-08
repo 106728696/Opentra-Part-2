@@ -160,16 +160,19 @@ article {
 
 /*Apply Page*/
 
-.application-form {
+.application-form { /* updated */
+    width: 90%;
+    max-width: 800px;
+    margin: 30px auto;
+    padding: 20px;
     background-color: #111a2e;
-    padding: 30px;
     border-radius: 10px;
     box-shadow: 0 2px 8px #64748b;
 }
 
 .application-form fieldset {
-    margin-bottom: 25px;
-    padding: 20px;
+    margin-bottom: 15px;
+    padding: 12px;
     border: 2px solid #cbd5e1;
     border-radius: 8px;
 }
@@ -185,12 +188,12 @@ article {
     color: #8c6b55;
 }
 
-.form-group {
+.form-group { /* updated */
     display: grid;
-    grid-template-columns: 200px 1fr;
-    gap: 15px;
+    grid-template-columns: 150px 1fr;
+    gap: 8px;
     align-items: center;
-    margin-bottom: 18px;
+    margin-bottom: 10px;
 }
 
 .form-group label {
@@ -199,9 +202,9 @@ article {
 
 .form-group input,
 .form-group select,
-.form-group textarea {
+.form-group textarea { /* updated */
     width: 97%;
-    padding: 10px;
+    padding: 6px;
     border: 1px solid #94a3b8;
     border-radius: 5px;
     font-size: 1rem;
@@ -212,6 +215,15 @@ article {
 .form-group textarea:focus {
     outline: 3px solid #bfdbfe;
     border-color: #a98764;
+}
+
+.form-group textarea { /* updated */
+    width: 97%;
+    resize: none;
+}
+
+.form-group select{ /* updated */
+    width: 100%;
 }
 
 .gender-fieldset {
