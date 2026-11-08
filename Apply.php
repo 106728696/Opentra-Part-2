@@ -3,8 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
-    <!--fixing the page to be able to fit no matter which devices the user is using on-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <meta name="description" content="Apply for a position at Opentra.">
 
@@ -18,21 +17,20 @@
             scroll-behavior: smooth;
         }
     </style>
-    <!--apply page's embedded css-->
 </head>
 
 <body>
 
 <header>
         <div class="Brand">
-            <a href = "index.php"> <img src="style/FullLogo1.png" alt="Opentra Logo" style="width: 15%;"> </a>
+            <a href = "index.html"> <img src="style/FullLogo1.png" alt="Opentra Logo" style="width: 15%;"> </a>
             <p> Opening minds develops the World </p> <!-- Slogan -->
         </div>  
         <nav>
-            <a href = "index.php"> Home </a>
-            <a href = "Jobs.php"> Jobs </a>
-            <a href = "Apply.php"> Apply </a>
-            <a href = "About.php"> About </a>
+            <a href = "index.html"> Home </a>
+            <a href = "Jobs.html"> Jobs </a>
+            <a href = "Apply.html"> Apply </a>
+            <a href = "About.html"> About </a>
         </nav>
         <hr>
 </header>
@@ -54,16 +52,23 @@
             <legend>Job Information</legend>
             <div class="form-group">
 
-                <label for="job-reference"> Job Reference Number </label>
-                <input
-                    type="text"
-                    id="job-reference"
-                    name="job-reference"
-                    pattern="[A-Za-z0-9]{5}" 
-                    maxlength="5"
-                    required
-                    title="Please enter exactly 5 alphanumeric characters."
-                    placeholder="Example: WD241"> <!-- didnt let the space to be acceptable here because the reference number should be accurate! -->
+                <label for="job-reference" >Job Reference Number*
+                    <span class="required"></span>
+                </label>
+                <select id="job-reference" name="job-reference" required>
+                    
+                    <option value="-">
+                        Select a Job Reference Number
+                    </option>
+
+                    <option value="WD101">
+                        WD101
+                    </option>
+
+                    <option value="UX202">
+                        UX202
+                    </option>
+                </select>
             </div>
 
         </fieldset>
@@ -72,7 +77,7 @@
             <legend>Personal Information</legend>
             <div class="form-group">
 
-                <label for="first-name"> First Name </label>
+                <label for="first-name"> First Name *</label>
                 <input
                     type="text"
                     id="first-name"
@@ -80,12 +85,12 @@
                     maxlength="20"
                     pattern="[A-Za-z ]+"
                     required
-                    title="First name must contain letters only and be no more than 20 characters."
+                    title="No more than 20 characters."
                     placeholder="First name">
             </div>
 
             <div class="form-group">
-                <label for="last-name"> Last Name </label>
+                <label for="last-name"> Last Name *</label>
                 <input
                     type="text"
                     id="last-name"
@@ -93,26 +98,25 @@
                     maxlength="20"
                     pattern="[A-Za-z ]+"
                     required
-                    title="Last name must contain letters only and be no more than 20 characters."
+                    title="No more than 20 characters."
                     placeholder="Last name">
 
             </div>
 
             <div class="form-group">
-                <label for="dob"> Date of Birth </label>
-                <input
-                    type="text"
-                    id="dob"
-                    name="dob"
-                    pattern="\d{2}/\d{2}/\d{4}"
-                    placeholder="dd/mm/yyyy"
-                    required
-                    title="Please enter your date of birth in dd/mm/yyyy format.">
-
+                <label for="dob">Date of Birth *</label>
+                    <input
+                        type="text"
+                        id="dob"
+                        name="dob"
+                        placeholder="dd/mm/yyyy"
+                        pattern="(0[1-9]|1[0-9]|2[0-8])/(0[1-9]|1[0-2])/(196[6-9]|19[7-9][0-9]|200[0-8])|29/(0[13-9]|1[0-2])/(196[6-9]|19[7-9][0-9]|200[0-8])|30/(0[13-9]|1[0-2])/(196[6-9]|19[7-9][0-9]|200[0-8])|31/(01|03|05|07|08|10|12)/(196[6-9]|19[7-9][0-9]|200[0-8])|29/02/(1968|1972|1976|1980|1984|1988|1992|1996|2000|2004|2008)"
+                        required
+                        title="Enter a valid date of birth in dd/mm/yyyy format.">
             </div>
 
             <fieldset class="gender-fieldset">
-                <legend>Gender</legend>
+                <legend>Gender *</legend>
                 <label>
                     <input
                         type="radio"
@@ -151,26 +155,29 @@
 
         <fieldset>
 
-            <legend>Contact Information</legend>
+            <legend>Contact Information *</legend>
             <div class="form-group">
-                <label for="street"> Street Address </label>
+                <label for="street"> Street Address *</label>
                 <input
                     type="text"
                     id="street"
                     name="street"
+                    minlength="5"
                     maxlength="40"
-                    required
-                    placeholder="Street address">
+                    pattern="[A-Za-z0-9 ,.'/-]+"
+                    placeholder="Enter a valid street address"
+                    required>
 
             </div>
 
             <div class="form-group">
-                <label for="suburb"> Suburb / Town </label>
-                <input
+                <label for="suburb"> Suburb / Town *</label>
+                <input 
                     type="text"
                     id="suburb"
                     name="suburb"
                     maxlength="40"
+                    pattern="[A-Za-z0-9 ,.'/-]+"
                     required
                     placeholder="Suburb or town">
 
@@ -178,7 +185,7 @@
 
             <div class="form-group">
 
-                <label for="state"> State </label>
+                <label for="state"> State *</label>
                 <select required>
 
                     <option value=""> Select a state</option>
@@ -195,7 +202,7 @@
 
             <div class="form-group">
 
-                <label for="postcode"> Postcode </label>
+                <label for="postcode"> Postcode *</label>
                 <input
                     type="text"
                     id="postcode"
@@ -203,13 +210,13 @@
                     pattern="[0-9]{4}"
                     maxlength="4"
                     required
-                    title="Postcode must contain exactly 4 digits."
+                    title="Postcode must be exactly 4 digits."
                     placeholder="0000">
             </div>
 
             <div class="form-group">
 
-                <label for="email"> Email Address </label>
+                <label for="email"> Email Address *</label>
 
                 <input
                     type="email"
@@ -220,12 +227,14 @@
             </div>
 
             <div class="form-group">
-                <label for="phone"> Phone Number </label>
+                <label for="phone"> Phone Number *</label>
                 <input
                     type="tel"
                     id="phone"
                     name="phone"
                     pattern="[0-9]{8,12}"
+                    minlength="8"
+                    maxlength="12"
                     required
                     title="Phone number must contain 8 to 12 digits."
                     placeholder="Phone number">
@@ -238,7 +247,7 @@
                 Select the skills that apply to you:
             </p>
 
-            <div class="checkbox-group">
+            <div class="checkbox-group" >
                 <label>
                     <input type="checkbox" name="skills" value="html"> HTML
                 </label>
@@ -299,10 +308,10 @@
 
 <footer>
         <nav class="footer-nav">
-            <a href = "index.php"> Home </a>
-            <a href = "Jobs.php"> Jobs </a>
-            <a href = "Apply.php"> Apply </a>
-            <a href = "About.php"> About </a>
+            <a href = "index.html"> Home </a>
+            <a href = "Jobs.html"> Jobs </a>
+            <a href = "Apply.html"> Apply </a>
+            <a href = "About.html"> About </a>
         </nav>
 
         <div class="footer-links">
