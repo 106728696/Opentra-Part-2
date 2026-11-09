@@ -17,19 +17,9 @@
 </head>
 
 <body>
-    <header>
-           <div class="Brand">
-                <a href = "index.php"> <img src="style/FullLogo1.png" alt="Opentra Logo" style="width: 15%;"> </a>
-                <p> Opening minds develops the World </p> <!-- Slogan -->
-            </div>  
-            <nav>
-                 <a href = "index.php"> Home </a>
-                 <a href = "Jobs.php"> Jobs </a>
-                 <a href = "Apply.php"> Apply </a>
-                 <a href = "About.php"> About </a>
-            </nav>
-            <hr>
-        </header>
+    
+     <?php include 'includes/header.inc'; ?>     
+    
     <main>
         <section class="about-intro">
             <p style="letter-spacing: 2px;">MEET THE TEAM</p>
@@ -261,26 +251,4 @@
     </p>
 </section>
     </main>
-    <footer>
-             <nav class="footer-nav">
-                <a href = "index.php"> Home </a>
-                <a href = "Jobs.php"> Jobs </a>
-                <a href = "Apply.php"> Apply </a>
-                <a href = "About.php"> About </a>
-            </nav>
-
-            <div class="footer-links">
-                <p>
-                    <a href="https://github.com/106728696/Opentra-COS10026-WebTechProject-.git" target="_blank"> Our GitHub Repository </a> | 
-                    <a href="https://webprojectcos10026group4.atlassian.net/jira/software/projects/SCRUM/boards/1?filter=assignee%20%3D%20712020%3A55e128ab-8704-4aef-9166-c0e524ca37be&groupBy=none" target="_blank"> Our Jira </a> | 
-                    <a href="mailto:info@opentra.com"> Email us: info@opentra.com </a>
-                </p>
-            </div>
-
-            <p> Group: Opentra | G04 </p>
-            <p>&copy; 2026 Opentra. All rights reserved.</p>
-             </div>
-</footer>
-
-</body>
-</html>
+     <?php include 'includes/footer.inc'; ?>     
