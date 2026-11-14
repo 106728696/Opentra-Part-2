@@ -47,8 +47,6 @@ if ($search !== "") {
 
     <title>Jobs - Opentra</title>
 
-    <link href="style/Styling.css" rel="stylesheet">
-
     <style>
         {
              .search-form input {
