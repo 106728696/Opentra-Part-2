@@ -86,21 +86,23 @@ if (
 
 
 // Birthdate: dd/mm/yyyy to yyyy-mm-dd
-$date = DateTime::createFromFormat("!d/m/Y", $birthdate);
-$dateErrors = DateTime::getLastErrors();
+// Validate Date of Birth 18-60 age 
+$dob = trim($_POST['birthdate'] ?? '');
+
+$date = DateTime::createFromFormat('!d/m/Y', $dob);
 
 if (
     !$date ||
-    ($dateErrors !== false &&
-        ($dateErrors["warning_count"] > 0 ||
-         $dateErrors["error_count"] > 0)) ||
-    $date->format("d/m/Y") !== $birthdate ||
-    $date > new DateTime("today")
+    $date->format('d/m/Y') !== $dob
 ) {
-    $errors[] = "Please enter a valid birthdate in dd/mm/yyyy format.";
+    $errors[] = "Please enter a valid date of birth (dd/mm/yyyy).";
 } else {
-    // Convert into MySQL DATE format
-    $birthdate = $date->format("Y-m-d");
+    $today = new DateTime();
+    $age = $date->diff($today)->y;
+
+    if ($date > $today || $age < 18 || $age > 60) {
+        $errors[] = "Applicants must be between 18 and 60 years old.";
+    }
 }
 
 
@@ -266,7 +268,6 @@ $createTable = "CREATE TABLE IF NOT EXISTS eoi (
 if (!mysqli_query($conn, $createTable)) {
     $errors[] = "There was a database error. Please try again later.";
 }
-
 
 //insert that application form into db
 

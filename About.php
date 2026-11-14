@@ -12,8 +12,6 @@ $result = mysqli_query($conn, "SELECT * FROM about ORDER BY member_id");
 
     <title>About Us | Opentra</title>
 
-    <link href="style/Styling.css" rel="stylesheet">
-
     <style>
         .current-page {
             font-weight: bold;

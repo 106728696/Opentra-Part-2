@@ -117,8 +117,6 @@ if (isset($_GET['search'])) {
 
     <title>Opentra Home Page</title>
 
-    <link href="style/Styling.css" rel="stylesheet">
-
     <style>
 
         #search-box {
