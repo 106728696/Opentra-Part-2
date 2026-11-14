@@ -1,3 +1,8 @@
+<?php
+require_once 'settings.php';
+$result = mysqli_query($conn, "SELECT * FROM about ORDER BY member_id");
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -67,85 +72,36 @@
     </figure>
 
     <div class="team-members">
+<?php while ($member = mysqli_fetch_assoc($result)) { ?>
 
-        <article class="team-member">
-            <img
-                src="pictures/JiaYuPicture.png"
-                alt="Jia Yu Tan"
-                class="member-photo"
-            >
+    <article class="team-member">
+        <img src="<?php echo $member['photo']; ?>"
+             alt="<?php echo $member['full_name']; ?>"
+             class="member-photo">
 
-            <h3>Jia Yu Tan</h3>
+        <h3><?php echo $member['full_name']; ?></h3>
 
-            <p class="student-id">
-                Student ID: 106728696
-            </p>
+        <p class="student-id">Student ID: <?php echo $member['student_id']; ?></p>
 
-            <p>
-                Responsible for developing the Jobs page and
-                assisting with proofreading and CSS.
-            </p>
-        </article>
+        <p><?php echo $member['role']; ?></p>
 
+        <h4>Project 1</h4>
+        <ul>
+            <?php foreach (explode("\n", $member['project1_contributions']) as $item) { ?>
+                <li><?php echo $item; ?></li>
+            <?php } ?>
+        </ul>
 
-        <article class="team-member">
-            <img
-                src="pictures/MilikelyPicture.png"
-                alt="Milikely Wendy Santaca Matuce"
-                class="member-photo"
-            >
+        <h4>Project 2</h4>
+        <ul>
+            <?php foreach (explode("\n", $member['project2_contributions']) as $item) { ?>
+                <li><?php echo $item; ?></li>
+            <?php } ?>
+        </ul>
+    </article>
 
-            <h3>Milikely Wendy Santaca Matuce</h3>
-
-            <p class="student-id">
-                Student ID: 106628864
-            </p>
-
-            <p>
-                Group leader and responsible for developing the
-                Home page and managing the main CSS file.
-            </p>
-        </article>
-
-
-        <article class="team-member">
-            <img
-                src="pictures/YatiPicture.png"
-                alt="Yati Myat Aye"
-                class="member-photo"
-            >
-
-            <h3>Yati Myat Aye</h3>
-
-            <p class="student-id">
-                Student ID: 106678050
-            </p>
-
-            <p>
-                Responsible for developing the Apply page and
-                helping plan the overall website.
-            </p>
-        </article>
-
-
-       <article class="team-member">
-    <img
-        src="pictures/AbdullahPicture.png"
-        alt="Abdullah Al Shafayet Sporsho"
-        class="member-photo"
-    >
-
-    <h3>Abdullah Al Shafayet Sporsho</h3>
-
-    <p class="student-id">
-        Student ID: 106213723
-    </p>
-
-    <p>
-        Responsible for developing the About page,
-        documentation and assisting with CSS.
-    </p>
-</article>
+<?php } ?>
+        
     </div>
 </section>
 
@@ -252,3 +208,4 @@
 </section>
     </main>
      <?php include 'includes/footer.inc'; ?>     
+<?php mysqli_close($conn); ?>

@@ -733,3 +733,18 @@ footer p {
         min-width: 640px;
     }
 }
+.team-member {
+    font-style: normal;
+}
+
+.team-member h4 {
+    margin-top: 12px;
+    font-size: 15px;
+    color: #6b4423;
+}
+
+.team-member ul {
+    text-align: left;
+    font-size: 14px;
+    margin-top: 6px;
+}

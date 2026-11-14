@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 12, 2026 at 08:45 AM
+-- Generation Time: Nov 14, 2026 at 03:18 PM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -20,6 +20,32 @@ SET time_zone = "+00:00";
 --
 -- Database: `opentra_db`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `about`
+--
+
+CREATE TABLE `about` (
+  `member_id` int(11) NOT NULL,
+  `full_name` varchar(100) NOT NULL,
+  `student_id` varchar(10) NOT NULL,
+  `photo` varchar(100) NOT NULL,
+  `role` varchar(150) NOT NULL,
+  `project1_contributions` text NOT NULL,
+  `project2_contributions` text NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `about`
+--
+
+INSERT INTO `about` (`member_id`, `full_name`, `student_id`, `photo`, `role`, `project1_contributions`, `project2_contributions`) VALUES
+(1, 'Jia Yu Tan', '106728696', 'pictures/JiaYuPicture.png', 'Jobs page developer', 'Developed the Jobs page\nProofreading\nAssisted with CSS', 'Converted the Jobs page to PHP so jobs load from the database\nAdded a search bar to the Jobs Page'),
+(2, 'Milikely Wendy Santaca Matuce', '106628864', 'pictures/MilikelyPicture.png', 'Group leader', 'Developed the Home page\nManaged the main CSS file', 'Managed the group and reviewed all pages'),
+(3, 'Yati Myat Aye', '106678050', 'pictures/YatiPicture.png', 'Apply page developer', 'Developed the Apply page\nHelped plan the overall website', 'Built process_eoi.php to save applications to the eoi table\nAdded form validation and error handling'),
+(4, 'Abdullah Al Shafayet Sporsho', '106213723', 'pictures/AbdullahPicture.png', 'About page developer', 'Developed the About page\nDocumentation\nAssisted with CSS', 'Created the about table and loaded the About page from the database\nUpdated the website styling');
 
 -- --------------------------------------------------------
 
@@ -75,6 +101,12 @@ INSERT INTO `jobs` (`job_id`, `job_ref`, `job_title`, `job_description`, `salary
 --
 
 --
+-- Indexes for table `about`
+--
+ALTER TABLE `about`
+  ADD PRIMARY KEY (`member_id`);
+
+--
 -- Indexes for table `eoi`
 --
 ALTER TABLE `eoi`
@@ -90,6 +122,12 @@ ALTER TABLE `jobs`
 --
 -- AUTO_INCREMENT for dumped tables
 --
+
+--
+-- AUTO_INCREMENT for table `about`
+--
+ALTER TABLE `about`
+  MODIFY `member_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `eoi`
