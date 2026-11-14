@@ -11,24 +11,24 @@
 body {
     font-family: "Inter", "Segoe UI", Arial, sans-serif;
     background-color: #ffffff;
-    color: #1e293b;
+    color: #111111;
     line-height: 1.65;
     font-size: 16px;
 }
 
 h1, h2, h3 {
     font-family: "Plus Jakarta Sans", "Inter", Arial, sans-serif;
-    color: #1e293b;
+    color: #111111;
     line-height: 1.25;
 }
 
 a {
-    color: #1e4e8c;
+    color: #6b4423;
     text-decoration: none;
 }
 
 a:hover {
-    color: #163a69;
+    color: #4a2e17;
     text-decoration: underline;
 }
 
@@ -56,7 +56,7 @@ header {
     gap: 16px;
     padding: 14px 6%;
     background-color: #ffffff;
-    border-bottom: 1px solid #e2e8f0;
+    border-bottom: 1px solid #e6dccf;
 }
 
 .Brand {
@@ -66,15 +66,15 @@ header {
 }
 
 .Brand img {
-    width: auto !important; /* logo had width 15% inline */
+    width: auto !important; 
     height: 40px;
 }
 
 header p {
     font-size: 14px;
-    color: #64748b;
+    color: #111111;
     padding-left: 16px;
-    border-left: 1px solid #e2e8f0;
+    border-left: 1px solid #e6dccf;
 }
 
 nav {
@@ -87,14 +87,14 @@ nav {
 nav a {
     padding: 8px 14px;
     border-radius: 6px;
-    color: #1e293b;
+    color: #111111;
     font-weight: 500;
     font-size: 15px;
 }
 
 nav a:hover {
-    color: #1e4e8c;
-    background-color: #e8f0fa;
+    color: #6b4423;
+    background-color: #f3ebe2;
     text-decoration: none;
 }
 
@@ -118,15 +118,15 @@ h2 {
 }
 
 h3 {
-    color: #1e4e8c;
+    color: #6b4423;
     font-size: 1.15rem;
 }
 
 /*Home Page*/
 
 .description {
-    background: #f3f7fc !important; /* replaces the dark banner */
-    border: 1px solid #e2e8f0;
+    background: #f7f1ea !important;
+    border: 1px solid #e6dccf;
     border-radius: 16px;
     padding: 64px 56px !important;
     margin-bottom: 16px;
@@ -138,7 +138,7 @@ h3 {
 
 .description-text p {
     font-size: 1.1rem;
-    color: #64748b;
+    color: #111111;
 }
 
 .description form {
@@ -155,7 +155,7 @@ h3 {
     width: 100%;
     margin-bottom: 8px;
     font-size: 14px;
-    color: #64748b;
+    color: #111111;
 }
 
 .description #search-box {
@@ -163,18 +163,18 @@ h3 {
     max-width: 440px;
     padding: 14px 16px;
     font-family: inherit;
-    border: 1px solid #e2e8f0;
+    border: 1px solid #e6dccf;
     border-radius: 8px 0 0 8px;
 }
 
 .description #search-box:focus {
     outline: none;
-    border-color: #1e4e8c;
+    border-color: #6b4423;
 }
 
 .description form button {
     padding: 14px 24px !important;
-    background-color: #1e4e8c !important;
+    background-color: #6b4423 !important;
     color: #ffffff !important;
     font-family: inherit;
     font-weight: 600;
@@ -183,21 +183,21 @@ h3 {
 }
 
 .description form button:hover {
-    background-color: #163a69 !important;
+    background-color: #4a2e17 !important;
 }
 
 main section {
     padding: 48px 0;
-    border-top: 1px solid #e2e8f0;
+    border-top: 1px solid #e6dccf;
 }
 
 main .description {
-    border-top: 1px solid #e2e8f0;
+    border-top: 1px solid #e6dccf;
 }
 
 .courses p, .Employment-announcements p {
     text-align: center;
-    color: #64748b;
+    color: #111111;
     max-width: 640px;
     margin: 0 auto;
 }
@@ -211,14 +211,14 @@ table {
     border-collapse: separate;
     border-spacing: 0;
     margin-top: 24px;
-    border: 1px solid #e2e8f0;
+    border: 1px solid #e6dccf;
     border-radius: 10px;
     overflow: hidden;
     font-size: 15px;
 }
 
 thead {
-    background-color: #f6f8fb;
+    background-color: #faf6f1;
 }
 
 thead th {
@@ -226,20 +226,20 @@ thead th {
     font-size: 13px;
     text-transform: uppercase;
     letter-spacing: 1px;
-    color: #64748b;
+    color: #111111;
 }
 
 th, td {
     padding: 14px 16px;
-    border-bottom: 1px solid #e2e8f0;
+    border-bottom: 1px solid #e6dccf;
     text-align: left;
     vertical-align: top;
 }
 
 tbody th {
-    background-color: #f6f8fb;
-    color: #1e4e8c;
-    border-right: 1px solid #e2e8f0;
+    background-color: #faf6f1;
+    color: #6b4423;
+    border-right: 1px solid #e6dccf;
 }
 
 tbody tr:last-child td {
@@ -247,7 +247,7 @@ tbody tr:last-child td {
 }
 
 tbody tr:hover td {
-    background-color: #e8f0fa;
+    background-color: #f3ebe2;
 }
 
 .Testimonials {
@@ -262,9 +262,9 @@ tbody tr:hover td {
 
 article {
     padding: 24px;
-    background-color: #f6f8fb;
-    border: 1px solid #e2e8f0;
-    border-left: 3px solid #1e4e8c;
+    background-color: #faf6f1;
+    border: 1px solid #e6dccf;
+    border-left: 3px solid #6b4423;
     border-radius: 10px;
     font-style: italic;
 }
@@ -286,13 +286,13 @@ article {
 
 .Statistics div {
     padding: 32px 20px;
-    background-color: #f6f8fb;
-    border: 1px solid #e2e8f0;
+    background-color: #faf6f1;
+    border: 1px solid #e6dccf;
     border-radius: 10px;
 }
 
 .Statistics div:hover {
-    box-shadow: 0 4px 12px #e2e8f0;
+    box-shadow: 0 4px 12px #e6dccf;
 }
 
 .Statistics h3 {
@@ -301,7 +301,7 @@ article {
 }
 
 .Statistics p {
-    color: #64748b;
+    color: #111111;
 }
 
 /*Apply Page*/
@@ -313,7 +313,7 @@ article {
 }
 
 .application-intro p {
-    color: #64748b;
+    color: #111111;
 }
 
 .application-form {
@@ -321,22 +321,22 @@ article {
     margin: 0 auto;
     padding: 32px;
     background-color: #ffffff;
-    border: 1px solid #e2e8f0;
+    border: 1px solid #e6dccf;
     border-radius: 14px;
-    box-shadow: 0 4px 16px #eef2f7;
+    box-shadow: 0 4px 16px #ece3d8;
 }
 
 .application-form fieldset {
     margin-bottom: 24px;
     padding: 20px 24px 8px;
-    border: 1px solid #e2e8f0;
+    border: 1px solid #e6dccf;
     border-radius: 10px;
 }
 
 .application-form legend {
     padding: 0 8px;
     font-weight: 700;
-    color: #1e4e8c;
+    color: #6b4423;
 }
 
 .form-group {
@@ -359,17 +359,17 @@ article {
     padding: 10px 12px;
     font-family: inherit;
     font-size: 15px;
-    color: #1e293b;
+    color: #111111;
     background-color: #ffffff;
-    border: 1px solid #cbd5e1;
+    border: 1px solid #c9b49f;
     border-radius: 8px;
 }
 
 .form-group input:focus,
 .form-group select:focus,
 .form-group textarea:focus {
-    outline: 3px solid #e8f0fa;
-    border-color: #1e4e8c;
+    outline: 3px solid #f3ebe2;
+    border-color: #6b4423;
 }
 
 .form-group textarea {
@@ -378,7 +378,7 @@ article {
 }
 
 input[type="radio"], input[type="checkbox"] {
-    accent-color: #1e4e8c;
+    accent-color: #6b4423;
     margin-right: 6px;
 }
 
@@ -409,23 +409,23 @@ input[type="radio"], input[type="checkbox"] {
 }
 
 .form-buttons button[type="submit"] {
-    background-color: #1e4e8c;
+    background-color: #6b4423;
     color: #ffffff;
-    border: 1px solid #1e4e8c;
+    border: 1px solid #6b4423;
 }
 
 .form-buttons button[type="submit"]:hover {
-    background-color: #163a69;
+    background-color: #4a2e17;
 }
 
 .form-buttons button[type="reset"] {
     background-color: #ffffff;
-    color: #1e293b;
-    border: 1px solid #cbd5e1;
+    color: #111111;
+    border: 1px solid #c9b49f;
 }
 
 .form-buttons button[type="reset"]:hover {
-    background-color: #f6f8fb;
+    background-color: #faf6f1;
 }
 
 /*Job Page*/
@@ -441,7 +441,7 @@ input[type="radio"], input[type="checkbox"] {
 }
 
 .job-page > p {
-    color: #64748b;
+    color: #111111;
 }
 
 .job-page form {
@@ -456,7 +456,7 @@ input[type="radio"], input[type="checkbox"] {
     flex: 1;
     padding: 10px 12px;
     font-family: inherit;
-    border: 1px solid #cbd5e1;
+    border: 1px solid #c9b49f;
     border-radius: 8px;
 }
 
@@ -465,7 +465,7 @@ input[type="radio"], input[type="checkbox"] {
     font-family: inherit;
     font-weight: 600;
     color: #ffffff;
-    background-color: #1e4e8c;
+    background-color: #6b4423;
     border: none;
     border-radius: 8px;
     cursor: pointer;
@@ -479,8 +479,8 @@ input[type="radio"], input[type="checkbox"] {
     width: 280px;
     margin: 0;
     padding: 24px;
-    background-color: #f6f8fb;
-    border: 1px solid #e2e8f0;
+    background-color: #faf6f1;
+    border: 1px solid #e6dccf;
     border-radius: 10px;
 }
 
@@ -491,7 +491,7 @@ input[type="radio"], input[type="checkbox"] {
 }
 
 .job-page aside ul {
-    color: #64748b;
+    color: #111111;
 }
 
 .job-page section {
@@ -500,9 +500,9 @@ input[type="radio"], input[type="checkbox"] {
     margin: 20px 0 0;
     padding: 28px;
     background: #ffffff;
-    border: 1px solid #e2e8f0;
+    border: 1px solid #e6dccf;
     border-radius: 10px;
-    box-shadow: 0 4px 16px #eef2f7;
+    box-shadow: 0 4px 16px #ece3d8;
 }
 
 .job-page section h3 {
@@ -517,7 +517,7 @@ input[type="radio"], input[type="checkbox"] {
 .job-page section h4 {
     margin-top: 20px;
     padding-top: 16px;
-    border-top: 1px solid #e2e8f0;
+    border-top: 1px solid #e6dccf;
 }
 
 .job-page section ol, .job-page section ul {
@@ -525,7 +525,6 @@ input[type="radio"], input[type="checkbox"] {
     font-size: 15px;
 }
 
-/*About Page*/
 
 .about-intro {
     text-align: center;
@@ -537,15 +536,15 @@ input[type="radio"], input[type="checkbox"] {
     max-width: 640px;
     margin-left: auto;
     margin-right: auto;
-    color: #64748b;
+    color: #111111;
 }
 
 .group-info {
     max-width: 640px;
     margin: 0 auto;
     padding: 24px 24px 24px 44px;
-    background-color: #f6f8fb;
-    border: 1px solid #e2e8f0;
+    background-color: #faf6f1;
+    border: 1px solid #e6dccf;
     border-radius: 10px;
 }
 
@@ -557,7 +556,7 @@ input[type="radio"], input[type="checkbox"] {
     max-width: 900px;
     margin: 0 auto 40px;
     padding: 12px;
-    border: 1px solid #e2e8f0;
+    border: 1px solid #e6dccf;
     border-radius: 14px;
 }
 
@@ -572,7 +571,7 @@ input[type="radio"], input[type="checkbox"] {
     margin-top: 10px;
     text-align: center;
     font-size: 14px;
-    color: #64748b;
+    color: #111111;
 }
 
 .team-section {
@@ -588,13 +587,13 @@ input[type="radio"], input[type="checkbox"] {
 .team-member {
     padding: 24px 20px;
     background-color: #ffffff;
-    border: 1px solid #e2e8f0;
+    border: 1px solid #e6dccf;
     border-radius: 10px;
     text-align: center;
 }
 
 .team-member:hover {
-    box-shadow: 0 4px 16px #eef2f7;
+    box-shadow: 0 4px 16px #ece3d8;
 }
 
 .member-photo {
@@ -604,20 +603,20 @@ input[type="radio"], input[type="checkbox"] {
     display: block;
     margin: 0 auto 16px;
     border-radius: 50%;
-    border: 3px solid #e8f0fa;
+    border: 3px solid #f3ebe2;
 }
 
 .team-member p {
     font-size: 14px;
-    color: #64748b;
+    color: #111111;
 }
 
 .student-id {
     display: inline-block;
     margin: 4px 0 12px;
     padding: 3px 10px;
-    background-color: #e8f0fa;
-    color: #1e4e8c;
+    background-color: #f3ebe2;
+    color: #6b4423;
     border-radius: 20px;
     font-size: 13px;
     font-weight: 600;
@@ -640,9 +639,9 @@ input[type="radio"], input[type="checkbox"] {
 blockquote {
     margin: 10px 0;
     padding: 16px 20px;
-    background-color: #f6f8fb;
-    border-left: 3px solid #1e4e8c;
-    color: #64748b;
+    background-color: #faf6f1;
+    border-left: 3px solid #6b4423;
+    color: #111111;
     font-style: italic;
 }
 
@@ -653,15 +652,15 @@ blockquote {
 .fun-facts caption {
     font-weight: 600;
     padding-bottom: 12px;
-    color: #64748b;
+    color: #111111;
 }
 
 .acknowledgement {
     margin-top: 16px;
     padding: 32px !important;
-    background-color: #f6f8fb;
-    border: 1px solid #e2e8f0 !important;
-    border-left: 3px solid #b8996f !important;
+    background-color: #faf6f1;
+    border: 1px solid #e6dccf !important;
+    border-left: 3px solid #6b4423 !important;
     border-radius: 10px;
 }
 
@@ -670,14 +669,14 @@ blockquote {
     font-size: 1.3rem;
 }
 
-/*Footer*/
+
 
 footer {
     margin-top: 32px;
     padding: 40px 24px;
-    background-color: #f6f8fb;
-    border-top: 1px solid #e2e8f0;
-    color: #64748b;
+    background-color: #faf6f1;
+    border-top: 1px solid #e6dccf;
+    color: #111111;
     text-align: center;
     font-size: 14px;
 }
@@ -691,7 +690,7 @@ footer p {
 }
 
 .footer-links a {
-    color: #1e4e8c;
+    color: #6b4423;
 }
 
 /*Mobile*/
