@@ -1,5 +1,4 @@
 <?php
-// 1. BLOCK DIRECT ACCESS
 
 if ($_SERVER["REQUEST_METHOD"] !== "POST") {
     header("Location: Apply.php");
@@ -21,14 +20,19 @@ $requiredFields = [
     "phone"
 ];
 
+$errors = [];
+
 foreach ($requiredFields as $field) {
-    if (!isset($_POST[$field]) || !is_string($_POST[$field])) {
-        header("Location: Apply.php");
-        exit();
+    if (
+        !isset($_POST[$field]) ||
+        !is_string($_POST[$field]) ||
+        trim($_POST[$field]) === ""
+    ) {
+        $errors[] = ucfirst($field) . " is required.";
     }
 }
 
-//2. INPUT CLEANING FUNCTION
+//clean input funcation
 function cleanInput($value) {
     return trim(stripslashes($value));
 }
@@ -51,7 +55,7 @@ $phone = cleanInput($_POST["phone"]);
 $errors = [];
 
 
-// 4. Sever VALIDATION
+//VALIDATION Recheck always recheck here
 
 // Job reference
 $validJobRefs = ["WD101", "UX202"];
@@ -143,8 +147,8 @@ if (!in_array($state, $validStates, true)) {
 
 
 // Postcode
-if (!preg_match("/^[0-9]{4}$/", $postalcode)) {
-    $errors[] = "Please enter a valid four-digit postcode.";
+if (!preg_match("/^[0-9]{1,4}$/", $postalcode)) {
+    $errors[] = "Please enter a valid postcode containing a maximum of 4 digits.";
 }
 
 
@@ -155,11 +159,9 @@ if (!filter_var($email, FILTER_VALIDATE_EMAIL) || strlen($email) > 100) {
 
 
 // Phone
-if (!preg_match("/^[0-9]{8,10}$/", $phone)) {
-    $errors[] = "Please enter a valid phone number containing 8 to 10 digits.";
+if (!preg_match("/^[0-9]{8,12}$/", $phone)) {
+    $errors[] = "Please enter a valid phone number containing 8 to 12 digits.";
 }
-
-// 5. COLLECT AND VALIDATE SKILLS 
 
 $validSkills = [
     "HTML",
@@ -172,23 +174,20 @@ $validSkills = [
 
 $selectedSkills = [];
 
-if (isset($_POST["skills"])) {
-
-    if (!is_array($_POST["skills"])) {
-        $errors[] = "Invalid skills submission.";
-    } else {
-        foreach ($_POST["skills"] as $skill) {
-
-            if (
-                !is_string($skill) ||
-                !in_array($skill, $validSkills, true)
-            ) {
-                $errors[] = "Please select valid skills.";
-                break;
-            }
-
-            $selectedSkills[] = $skill;
+if (!isset($_POST["skills"]) || !is_array($_POST["skills"])) {
+    $errors[] = "Please select at least one skill.";
+} else {
+    foreach ($_POST["skills"] as $skill) {
+        if (!is_string($skill) || !in_array($skill, $validSkills, true)) {
+            $errors[] = "Please select valid skills.";
+            break;
         }
+
+        $selectedSkills[] = $skill;
+    }
+
+    if (empty($selectedSkills)) {
+        $errors[] = "Please select at least one skill.";
     }
 }
 
@@ -260,7 +259,7 @@ $createTable = "CREATE TABLE IF NOT EXISTS eoi (
     state TEXT,
     postalcode VARCHAR(6),
     email VARCHAR(100),
-    phone VARCHAR(10),
+    phone VARCHAR(12),
     skills TEXT
 )";
 
