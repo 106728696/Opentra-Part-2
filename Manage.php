@@ -10,6 +10,6 @@
             <input type="password" name="password" id="password" required>
 
             <input type="hidden" name="token" value="Opentrarandomnumbers">
-            <input type="submit" value="Login">
+            <input type="submit" value="Login" class="form-buttons">
         </form>
-    <?php include 'includes/footer.inc'; ?>
+<?php include 'includes/footer.inc'; ?>
