@@ -1,5 +1,4 @@
-<?php
-require_once 'settings.php';
+<?php require_once 'settings.php';
 
 $search = "";
 
@@ -8,6 +7,7 @@ if (isset($_GET['search'])) {
 }
 
 if ($search !== "") {
+
     $sql = "SELECT * FROM jobs
             WHERE job_ref LIKE ?
             OR job_title LIKE ?
@@ -30,6 +30,7 @@ if ($search !== "") {
     $result = mysqli_stmt_get_result($stmt);
 
 } else {
+
     $sql = "SELECT * FROM jobs ORDER BY job_id";
     $result = mysqli_query($conn, $sql);
 }
@@ -42,32 +43,53 @@ if ($search !== "") {
     <meta charset="UTF-8">
     <meta name="description" content="Jobs at Opentra">
     <meta name="author" content="Opentra">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>Jobs - Opentra</title>
 
     <link href="style/Styling.css" rel="stylesheet">
 
     <style>
-        main {
-            padding: 20px;
+        {
+             .search-form input {
+            padding: 12px;
+            width: 250px;
+            max-width: 65%;
+            font: inherit;
+            border: 1px solid #cbd5e1;
+            border-radius: 8px;
         }
 
-        aside {
-            float: right;
-            width: 20%;
-            margin: 10px;
-            padding: 15px;
-            border: 1px solid black;
-            box-sizing: border-box;
+        .search-form input:focus {
+            outline: none;
+            border-color: var(--primary);
+            box-shadow: 0 0 0 3px var(--primary-soft);
         }
 
-        section {
-            display: inline-block;
-            vertical-align: top;
-            width: 34%;
-            margin: 10px;
-            padding: 15px;
-            border: 1px solid #ccc;
-            box-sizing: border-box;
+        .search-form button {
+            padding: 12px 20px;
+            font: inherit;
+            font-weight: 600;
+            color: #ffffff;
+            background-color: var(--primary);
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+        }
+
+        .search-form button:hover {
+            background-color: var(--primary-dark);
+        }
+
+        .search-form a {
+            margin-left: 8px;
+            font-size: 0.9rem;
+        }
+        .job-page section.search-highlight {
+            border: 2px solid var(--accent);
+            background-color: #fffdf8;
+            box-shadow: 0 0 12px rgba(184, 153, 111, 0.2);
+            scroll-margin-top: 100px;
         }
     </style>
 </head>
@@ -75,27 +97,25 @@ if ($search !== "") {
 <body>
 
 <header>
+
     <div class="Brand">
-        <a href="index.html">
-            <img src="style/FullLogo1.png" alt="Opentra Logo" style="width: 15%;">
+        <a href="index.php">
+            <img src="style/FullLogo1.png"
+                 alt="Opentra Logo" style="width: 15%;">
         </a>
+
         <p>Opening minds develops the World</p>
     </div>
 
-    <nav>
-        <a href="index.html">Home</a>
-        <a href="jobs.php">Jobs</a>
-        <a href="Apply.html">Apply</a>
-        <a href="About.html">About</a>
-    </nav>
+    <?php include 'includes/navigation.inc'; ?>
 
-    <hr>
 </header>
 
 <main class="job-page">
 
     <aside>
         <h2>Why Work With Us?</h2>
+
         <ul>
             <li>Friendly team</li>
             <li>Learn new skills</li>
@@ -110,24 +130,30 @@ if ($search !== "") {
         Join Opentra and help us create better digital learning experiences.
     </p>
 
-    <!-- Job Search -->
-    <form method="GET" action="jobs.php">
+    <!-- Shared website search -->
+    <form method="GET" action="index.php" class="search-form">
+
         <input
-            type="text"
+            type="search"
             name="search"
-            placeholder="Search jobs..."
+            placeholder="Search for courses or jobs..."
             value="<?php echo htmlspecialchars($search); ?>"
         >
+
         <button type="submit">Search</button>
+
         <a href="jobs.php">Show All Jobs</a>
+
     </form>
 
-    <!-- Display Jobs from Database -->
     <?php if (mysqli_num_rows($result) > 0) { ?>
 
         <?php while ($job = mysqli_fetch_assoc($result)) { ?>
 
-            <section>
+            <section
+                class="job-card <?php echo $search !== '' ? 'search-highlight' : ''; ?>"
+                id="job-<?php echo (int)$job['job_id']; ?>"
+            >
 
                 <h3>
                     <?php echo htmlspecialchars($job['job_title']); ?>
@@ -153,37 +179,56 @@ if ($search !== "") {
                 </p>
 
                 <h4>Responsibilities</h4>
+
                 <ol>
                     <?php
                     $responsibilities = explode("\n", $job['responsibilities']);
 
                     foreach ($responsibilities as $item) {
+                        if (trim($item) !== "") {
                     ?>
-                        <li><?php echo htmlspecialchars($item); ?></li>
-                    <?php } ?>
+                        <li><?php echo htmlspecialchars(trim($item)); ?></li>
+                    <?php
+                        }
+                    }
+                    ?>
                 </ol>
 
                 <h4>Essential Requirements</h4>
+
                 <ul>
                     <?php
                     $essential = explode("\n", $job['essential_requirements']);
 
                     foreach ($essential as $item) {
+                        if (trim($item) !== "") {
                     ?>
-                        <li><?php echo htmlspecialchars($item); ?></li>
-                    <?php } ?>
+                        <li><?php echo htmlspecialchars(trim($item)); ?></li>
+                    <?php
+                        }
+                    }
+                    ?>
                 </ul>
 
                 <h4>Preferable Requirements</h4>
+
                 <ul>
                     <?php
                     $preferable = explode("\n", $job['preferable_requirements']);
 
                     foreach ($preferable as $item) {
+                        if (trim($item) !== "") {
                     ?>
-                        <li><?php echo htmlspecialchars($item); ?></li>
-                    <?php } ?>
+                        <li><?php echo htmlspecialchars(trim($item)); ?></li>
+                    <?php
+                        }
+                    }
+                    ?>
                 </ul>
+
+                <p>
+                    <a href="Apply.php">Apply for this position</a>
+                </p>
 
             </section>
 
@@ -198,44 +243,15 @@ if ($search !== "") {
     <p style="text-align:center; clear:both;">
         <strong>
             Interested in joining Opentra? Visit our Apply page.
+            <a href="Apply.php">Apply here</a>.
         </strong>
     </p>
 
 </main>
 
-<footer>
+<?php include 'includes/footer.inc'; ?>
 
-    <nav class="footer-nav">
-        <a href="index.html">Home</a>
-        <a href="jobs.php">Jobs</a>
-        <a href="Apply.html">Apply</a>
-        <a href="About.html">About</a>
-    </nav>
-
-    <div class="footer-links">
-        <p>
-            <a href="https://github.com/106728696/Opentra-COS10026-WebTechProject-.git" target="_blank">
-                Our GitHub Repository
-            </a> |
-
-            <a href="https://webprojectcos10026group4.atlassian.net/jira/software/projects/SCRUM/boards/1?filter=assignee%20%3D%20712020%3A55e128ab-8704-4aef-9166-c0e524ca37be&groupBy=none" target="_blank">
-                Our Jira
-            </a> |
-
-            <a href="mailto:info@opentra.com">
-                Email us: info@opentra.com
-            </a>
-        </p>
-    </div>
-
-    <p>Group: Opentra | G04</p>
-    <p>&copy; 2026 Opentra. All rights reserved.</p>
-
-</footer>
+<?php mysqli_close($conn); ?>
 
 </body>
 </html>
-
-<?php
-mysqli_close($conn);
-?>
