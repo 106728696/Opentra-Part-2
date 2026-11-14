@@ -9,8 +9,6 @@
 
     <title>Opentra | Apply</title>
 
-    <link href="style/Styling.css" rel="stylesheet">
-
     <style>
         .application-intro {
             text-align: center;
