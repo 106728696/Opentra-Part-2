@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 15, 2026 at 10:22 AM
+-- Generation Time: Nov 15, 2026 at 02:00 PM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -42,10 +42,10 @@ CREATE TABLE `about` (
 --
 
 INSERT INTO `about` (`member_id`, `full_name`, `student_id`, `photo`, `role`, `project1_contributions`, `project2_contributions`) VALUES
-(1, 'Jia Yu Tan', '106728696', 'pictures/JiaYuPicture.png', 'Jobs page developer', 'Developed the Jobs page\nProofreading\nAssisted with CSS', 'Converted the Jobs page to PHP so jobs load from the database\nAdded a search bar to the Jobs Page'),
-(2, 'Milikely Wendy Santaca Matuce', '106628864', 'pictures/MilikelyPicture.png', 'Group leader', 'Developed the Home page\nManaged the main CSS file', 'Managed the group and reviewed all pages'),
-(3, 'Yati Myat Aye', '106678050', 'pictures/YatiPicture.png', 'Apply page developer', 'Developed the Apply page\nHelped plan the overall website', 'Built process_eoi.php to save applications to the eoi table\nAdded form validation and error handling'),
-(4, 'Abdullah Al Shafayet Sporsho', '106213723', 'pictures/AbdullahPicture.png', 'About page developer', 'Developed the About page\nDocumentation\nAssisted with CSS', 'Created the about table and loaded the About page from the database\nUpdated the website styling');
+(1, 'Jia Yu Tan', '106728696', 'pictures/JiaYuPicture.png', 'Repository and jobs page developer', 'Developed the Jobs page\nProofreading\nAssisted with CSS', 'Set up the GitHub repository and uploaded our Part 1 site\nRenamed all pages from .html to .php\nWrote settings.php for the database connection\nCreated the jobs table and loaded the Jobs page from the database\nAdded a search to the Jobs page using a prepared statement'),
+(2, 'Milikely Wendy Santaca Matuce', '106628864', 'pictures/MilikelyPicture.png', 'Group leader', 'Developed the Home page\nManaged the main CSS file', 'Created header.inc, navigation.inc and footer.inc and used them on every page\nMoved the stylesheet link into header.inc\nBuilt the login page and the manage.php dashboard for EOIs\nAdded process.php for login and logout.php\nUploaded and maintained opentra_db.sql'),
+(3, 'Yati Myat Aye', '106678050', 'pictures/YatiPicture.png', 'Apply page developer', 'Developed the Apply page\nHelped plan the overall website', 'Fixed the Project 1 feedback on the Apply page\nBuilt process_eoi.php to validate and save applications\nAdded age and birthdate validation\nBuilt the home page search for courses and jobs\nFixed errors on the Jobs page\nAdded the users table so the login works'),
+(4, 'Abdullah Al Shafayet Sporsho', '106213723', 'pictures/AbdullahPicture.png', 'About page and design developer', 'Developed the About page\nDocumentation\nAssisted with CSS', 'Moved CSS and images into style/ and pictures/ and updated all links\nRedesigned Styling.css in brown, black and white\nCreated the about table and loaded the About page from the database\nStyled the team member cards');
 
 -- --------------------------------------------------------
 
