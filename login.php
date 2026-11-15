@@ -1,6 +1,12 @@
 <?php include 'includes/header.inc'; ?>
 <main>
         <h1>Login Form</h1>
+        <section class="application-intro">
+            <p>
+                Welcome!
+                Please login into your account
+            </p>
+        </section>
 
         <form method="post" action="process.php" class="application-form">
 
