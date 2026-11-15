@@ -102,10 +102,10 @@ if ($search !== "") {
         <h2>Why Work With Us?</h2>
 
         <ul>
-            <li>Friendly team</li>
-            <li>Learn new skills</li>
-            <li>Flexible workplace</li>
-            <li>Meaningful EdTech projects</li>
+            <li>Join a <strong>friendly and supportive team</strong> that values collaboration and teamwork.</li>
+            <li><strong>Develop new skills</strong> and gain valuable experience through hands-on learning opportunities.</li>
+            <li>Enjoy a <strong>flexible workplace</strong> that encourages a healthy balance between work and personal life.</li>
+            <li>Be part of <strong>meaningful EdTech projects</strong> that use technology to improve learning and education.</li>
         </ul>
     </aside>
 
