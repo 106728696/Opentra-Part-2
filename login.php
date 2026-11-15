@@ -15,7 +15,7 @@
         <?php include 'includes/header.inc'; ?>
         <main>
                 <h1>Login Form</h1>
-                <section class="login-intro">
+                <section class="manage-intro">
                     <p>
                         Welcome!
                         Please login into your account
