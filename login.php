@@ -7,7 +7,7 @@
 
     <meta name="description" content="Apply for a position at Opentra.">
 
-    <title>Opentra | Manage </title>
+    <title>Opentra | Login </title>
 </head>
 
 <body>
