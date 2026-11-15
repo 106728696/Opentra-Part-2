@@ -749,3 +749,9 @@ footer p {
     font-size: 14px;
     margin-top: 6px;
 }
+
+.manage-intro {
+            text-align: center;
+            margin-bottom: 25px;
+            scroll-behavior: smooth;
+        }
