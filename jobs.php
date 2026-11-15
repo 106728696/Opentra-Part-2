@@ -94,20 +94,7 @@ if ($search !== "") {
 
 <body>
 
-<header>
-
-    <div class="Brand">
-        <a href="index.php">
-            <img src="style/FullLogo1.png"
-                 alt="Opentra Logo" style="width: 15%;">
-        </a>
-
-        <p>Opening minds develops the World</p>
-    </div>
-
-    <?php include 'includes/navigation.inc'; ?>
-
-</header>
+<?php include 'includes/header.inc'; ?>
 
 <main class="job-page">
 
