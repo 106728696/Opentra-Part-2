@@ -261,7 +261,6 @@ article {
     padding: 24px;
     background-color: #faf6f1;
     border: 1px solid #e6dccf;
-    border-left: 3px solid #6b4423;
     border-radius: 10px;
     font-style: italic;
 }
@@ -652,7 +651,6 @@ blockquote {
     padding: 32px !important;
     background-color: #faf6f1;
     border: 1px solid #e6dccf !important;
-    border-left: 3px solid #6b4423 !important;
     border-radius: 10px;
 }
 
