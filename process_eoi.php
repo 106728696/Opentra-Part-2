@@ -103,7 +103,12 @@ if (
     if ($date > $today || $age < 18 || $age > 60) {
         $errors[] = "Applicants must be between 18 and 60 years old.";
     }
+    else {
+        // Convert date into MySQL format
+        $birthdate = $date->format('Y-m-d');
+    }
 }
+
 
 
 // Gender
